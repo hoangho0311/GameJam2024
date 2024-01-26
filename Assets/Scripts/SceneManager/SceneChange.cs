@@ -26,10 +26,10 @@ public class SceneChange : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "InGame")
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                SceneManager.LoadScene("Ending");
-            }
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    SceneManager.LoadScene("Ending");
+            //}
         }
     }
 
