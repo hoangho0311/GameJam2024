@@ -11,11 +11,12 @@ public class Respawn : MonoBehaviour
 
     private RaycastHit hit;
     private int layerMask;
-    public float distance = 10;
+    public float distance = 5;
     AudioSource resp;
 
     void Awake()
     {
+        player = GameObject.Find("Player");
         anim = player.GetComponentInChildren<Animator>();
         layerMask = 1 << 7;
         resp = GetComponent<AudioSource>();

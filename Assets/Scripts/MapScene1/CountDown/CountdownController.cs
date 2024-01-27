@@ -23,14 +23,16 @@ public class CountdownController : MonoBehaviour
     private void Awake()
     {
         animator = anim.GetComponent<Animator>();
-        StartCoroutine(CountdownToStart());
         
         Num_A.SetActive(false); 
         Num_B.SetActive(false); 
         Num_C.SetActive(false); 
         Num_GO.SetActive(false);
+    }
 
-        Time.timeScale = 0;
+    public void StartCountDown()
+    {
+        StartCoroutine(CountdownToStart());
     }
 
     IEnumerator CountdownToStart()

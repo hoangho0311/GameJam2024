@@ -44,7 +44,6 @@ namespace Levels
             if (other.tag == "Player" || other.tag == "Bot")
             {
                 DestroyDoorDashWall();
-                Debug.Log($"Force: {gameObject.name}"); // DEBUG
             }
         }
     }

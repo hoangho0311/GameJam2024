@@ -7,10 +7,25 @@ public class DestinationCount : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (!GameManager.instance.GetGameOver())
+        if (UIManager.Instance.limitTime >= 0 && !UIManager.Instance.isGameDone)
         {
             UIManager.Instance._currentRank++;
-            GameManager.instance.SetWinGame(true);
+
+            if (UIManager.Instance.currentLevelRank == 3)
+            {
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    GameManager.instance.SetWinGame(true);
+                }
+                else
+                {
+                    GameManager.instance.SetWinGame(false);
+                }
+            }
+            else
+            {
+                GameManager.instance.SetWinGame(true);
+            }
         }
     }
 }

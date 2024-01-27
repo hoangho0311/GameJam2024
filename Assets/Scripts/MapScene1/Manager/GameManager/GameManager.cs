@@ -61,20 +61,8 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        //PlayerPrefs.DeleteAll();
-
-        if (!PlayerPrefs.HasKey("FirstPlay"))
-        {
-            Debug.Log("Lan dau");
-            PlayerPrefs.SetInt("FirstPlay", 1);
-            PlayerPrefs.SetInt("CurrentLevelRank", 1);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        PlayerPrefs.SetInt("CurrentLevelRank", 1);
-    }
+    //private void OnDestroy()
+    //{
+    //    PlayerPrefs.SetInt("CurrentLevelRank", 1);
+    //}
 }

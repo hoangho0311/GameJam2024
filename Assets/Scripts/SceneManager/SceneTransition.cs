@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
 {
     public static SceneTransition instance;
     public GameObject LoadingScreen, startTransition, endTransition;
+    public CountdownController countdownController;
     public Slider loadingBarFill;
     private float target;
 
@@ -36,7 +37,7 @@ public class SceneTransition : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene("InGame2");
+                SceneManager.LoadScene(1);
             }
         }
 
@@ -50,7 +51,7 @@ public class SceneTransition : MonoBehaviour
 
     public void LobbySceneChange()
     {
-        SceneManager.LoadScene("WaitingUser");
+        SceneManager.LoadScene(1);
     }
 
     public void WaitingPalyersSceneChange()
@@ -60,7 +61,7 @@ public class SceneTransition : MonoBehaviour
 
     public void IntroSceneChange()
     {
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene(1);
     }
 
     public void InGameSceneChange()
@@ -71,12 +72,15 @@ public class SceneTransition : MonoBehaviour
     IEnumerator StartTransition()
     {
         startTransition.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.6f);
+        countdownController.StartCountDown();
+        Time.timeScale = 0;
         startTransition.SetActive(false);
     }
 
-    public async void LoadingScene(int sceneID)
+    public async void LoadingScene(int sceneID, int level)
     {
+        PlayerPrefs.SetInt("CurrentLevelRank", level);
         target = 0;
         var scene = SceneManager.LoadSceneAsync(sceneID);
         scene.allowSceneActivation = false;

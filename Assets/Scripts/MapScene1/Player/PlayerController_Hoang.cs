@@ -17,29 +17,23 @@ public class PlayerController_Hoang : MonoBehaviour
 
     public GameObject bar;
 
-    public string playerTag;
     public float bounceForce;
     public ParticleSystem bounce;
-
 
     public AudioSource mysfx;
     public AudioClip jumpfx;
     public AudioClip bouncefx;
 
-
     Animator anim;
     Rigidbody rigid;
 
     bool isJump;
-    
     bool isDie;
 
     Vector3 moveVec;
 
-
     //Joystick
     [SerializeField] private FixedJoystick joystick;
-    [SerializeField] private Button jumpButton;
 
     // Start is called before the first frame update
     void Awake()
@@ -105,6 +99,7 @@ public class PlayerController_Hoang : MonoBehaviour
             rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
             isJump = true;
 
+            //anim.SetBool("isJump", true);
             anim.SetTrigger("doJump");
             mysfx.PlayOneShot(jumpfx);
             dust.Play();
@@ -128,7 +123,6 @@ public class PlayerController_Hoang : MonoBehaviour
             
             isJump = false;
         }
-
         else if (collision.gameObject.tag == "Platform")
         {
             anim.SetBool("isJump", false);

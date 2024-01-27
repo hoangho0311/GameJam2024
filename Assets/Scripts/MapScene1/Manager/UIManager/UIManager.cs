@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public SceneTransition sceneTransition;
-    public GameManager gameManager;
+    private SceneTransition sceneTransition;
+    private GameManager gameManager;
     public float limitTime;
     public Text textTimer;
     int min;
@@ -15,15 +15,14 @@ public class UIManager : MonoBehaviour
     public GameObject success;
     public GameObject failure;
     public GameObject player;
-    public GameObject destPos;
-    public GameObject boxTriggerPoint;
     public int _currentRank;
     public Text curRankUI;
     public int currentLevelRank;
-
-    private int isIncreaseLevel;
-
+    
     public static UIManager Instance;
+
+    public bool isGameDone;
+    public GameObject loadingPanel;
     private void Awake()
     {
         Instance = this;
@@ -31,7 +30,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        isIncreaseLevel = 0;
+        isGameDone = false;
+        _currentRank = 0;
         currentLevelRank = PlayerPrefs.GetInt("CurrentLevelRank");
         sceneTransition = SceneTransition.instance;
         gameManager = GameManager.instance;
@@ -40,15 +40,15 @@ public class UIManager : MonoBehaviour
 
         if(currentLevelRank == 1)
         {
-            curRankUI.text = _currentRank + " /20";
+            curRankUI.text = _currentRank + " /15";
         }
         else if (currentLevelRank == 2)
         {
-            curRankUI.text = _currentRank + " /15";
+            curRankUI.text = _currentRank + " /10";
         }
         else if (currentLevelRank == 3)
         {
-            curRankUI.text = _currentRank + " /10";
+            curRankUI.text = _currentRank + " /1";
         }
     }
 
@@ -56,41 +56,35 @@ public class UIManager : MonoBehaviour
     float currentTime = 0;
     void Update()
     {
-        if (!gameManager.GetGameOver())
+        if (!gameManager.GetGameOver() || !gameManager.GetWinGame())
             Timer();
 
-        if (isIncreaseLevel == 1)
-        {
-            currentLevelRank = PlayerPrefs.GetInt("CurrentLevelRank");
-            PlayerPrefs.SetInt("CurrentLevelRank", currentLevelRank+=1);
-        }
 
-        if (currentLevelRank == 1)
+        if (currentLevelRank == 1 && limitTime >= 0)
         {
-            if(_currentRank == 20)
-            {
-                gameManager.SetGameOver(true);
-                GameOverUi();
-            }
-        }
-        else if (currentLevelRank == 2)
-        {
+            curRankUI.text = _currentRank + " /15";
             if (_currentRank == 15)
             {
-                gameManager.SetGameOver(true);
-                GameOverUi();
+                CheckStatusGame();
+            }
+        }
+        else if (currentLevelRank == 2 && limitTime >= 0)
+        {
+            curRankUI.text = _currentRank + " /10";
+            if (_currentRank == 10)
+            {
+                CheckStatusGame();
             }
         }
         else if (currentLevelRank == 3)
         {
-            if (_currentRank == 10)
+            curRankUI.text = _currentRank + " /1";
+            if (_currentRank == 1)
             {
-                gameManager.SetGameOver(true);
-                GameOverUi();
+                CheckStatusGame();
             }
         }
     }
-
 
     void Timer()
     {
@@ -109,46 +103,46 @@ public class UIManager : MonoBehaviour
         if (limitTime <= 0)
         {
             textTimer.text = "<color=red>" + "Time Over" + "</color>";
-            roundOver.SetActive(true);
 
-            currentTime += Time.deltaTime;
+            CheckStatusGame();
+        }
+    }
 
-            if (roundOver.activeSelf == true)
+    public void CheckStatusGame()
+    {
+        isGameDone = true;
+        roundOver.SetActive(true);
+
+        currentTime += Time.deltaTime;
+
+        if (roundOver.activeSelf == true)
+        {
+            if (currentTime > waitTime)
             {
-                if (currentTime > waitTime)
+                if (gameManager.GetWinGame())
                 {
-                    if (gameManager.GetWinGame())
+                    if (currentTime > 3f)
                     {
-                        if (currentTime > 3f)
-                        {
-                            isIncreaseLevel++;
-                            roundOver.SetActive(false);
-                            success.SetActive(true);
+                        roundOver.SetActive(false);
+                        success.SetActive(true);
 
-                            LHS_Particle.Instance.Success();
+                        LHS_Particle.Instance.Success();
 
-                            LHS_Particle.Instance.transform.position = player.transform.position + new Vector3(0, 4f, 0);
-                        }
+                        LHS_Particle.Instance.transform.position = player.transform.position + new Vector3(0, 4f, 0);
+                        loadingPanel.SetActive(true);
                     }
-                    else
+                }
+                else
+                {
+                    if (currentTime > 3f)
                     {
-                        if (currentTime > 3f)
-                        {
-                            isIncreaseLevel++;
-                            roundOver.SetActive(false);
-                            failure.SetActive(true);
-                        }
+                        gameManager.SetGameOver(true);
+                        roundOver.SetActive(false);
+                        failure.SetActive(true);
+                        loadingPanel.SetActive(true);
                     }
                 }
             }
         }
-    }
-
-    private void GameOverUi()
-    {
-        currentLevelRank = PlayerPrefs.GetInt("CurrentLevelRank");
-        PlayerPrefs.SetInt("CurrentLevelRank", currentLevelRank += 1);
-        roundOver.SetActive(false);
-        failure.SetActive(true);
     }
 }
