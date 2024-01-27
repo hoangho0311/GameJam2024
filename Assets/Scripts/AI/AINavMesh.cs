@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class AINavMesh : MonoBehaviour
 {
-    GameObject destPos;
+    Vector3 destPos;
     NavMeshAgent agent;
 
     Rigidbody rigid;
@@ -14,13 +14,13 @@ public class AINavMesh : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
-        destPos = GameObject.Find("RealDestPos");
+        destPos = new Vector3(Random.Range(-10f, 7f), 61, Random.Range(570f, 578f));
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        agent.destination = destPos.transform.position;
+        agent.destination = destPos;
         FreezeRotation();
     }
 

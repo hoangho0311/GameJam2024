@@ -15,15 +15,9 @@ public class UIManager : MonoBehaviour
     public GameObject player;
     public GameObject destPos;
     public GameObject boxTriggerPoint;
-    int curRank = 0;
+    int _currentRank = 0;
     public Text curRankUI;
 
-    // LHS 파티클
-    //public ParticleSystem winParticle;
-    //public ParticleSystem win;
-
-
-    // LHS 사운드 효과
     //public AudioSource mysfx;
     //public AudioClip winfx;
     //public AudioClip losefx;
@@ -35,23 +29,21 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-     
     }
-    public int CurRank
+    public int CurrentRank
     {
         get
         {
-            return curRank;
+            return _currentRank;
         }
         set
         {
-            curRank = value;
-            curRankUI.text = curRank + " / 20 ";
+            _currentRank = value;
+            curRankUI.text = _currentRank + " / 15";
         }
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
         GameObject player = GameObject.Find("Player");
@@ -59,8 +51,7 @@ public class UIManager : MonoBehaviour
     }
 
     float waitTime = 2f;
-    float curretTime = 0;
-    // Update is called once per frame
+    float currentTime = 0;
     void Update()
     {
         Timer();
@@ -74,8 +65,8 @@ public class UIManager : MonoBehaviour
         if (limitTime >= 60f)
         {
             min = (int)limitTime / 60;
-            sec = limitTime % 60;
-            textTimer.text = min + " : " + (int)sec;
+            sec = (int)limitTime % 60;
+            textTimer.text = min + " : " + sec.ToString("00");
         }
         if (limitTime < 60f)
             textTimer.text = "<color=white>" + (int)limitTime + "</color>";
@@ -86,22 +77,19 @@ public class UIManager : MonoBehaviour
             textTimer.text = "<color=red>" + "Time Over" + "</color>";
             roundOver.SetActive(true);
 
-            curretTime += Time.deltaTime;
+            currentTime += Time.deltaTime;
 
             if (roundOver.activeSelf == true)
             {
-                if (curretTime > waitTime)
+                if (currentTime > waitTime)
                 {
-                    
-
                     if (player.transform.position.z > 560)
                     {
-                        if (curretTime > 3f)
+                        if (currentTime > 3f)
                         {
                             roundOver.SetActive(false);
                             success.SetActive(true);
 
-                            // LHS 효과
                             //winParticle.Play();
                             //win.Play();
                             //mysfx.PlayOneShot(winfx);
@@ -109,28 +97,17 @@ public class UIManager : MonoBehaviour
                             //curretTime = 2;
                             LHS_Particle.Instance.Success();
 
-                            LHS_Particle.Instance.transform.position = player.transform.position + new Vector3(0, 4f, 0);
-
+                            LHS_Particle.Instance.transform.position =
+                                player.transform.position + new Vector3(0, 4f, 0);
                         }
-
                     }
-
-                        
                     else
                     {
-                        if (curretTime > 3f)
+                        if (currentTime > 3f)
                         {
                             roundOver.SetActive(false);
                             failure.SetActive(true);
-
-                            //curretTime = 2;
-
-                            // LHS 효과
-                            //mysfx.PlayOneShot(losefx);
-
-
                         }
-                        
                     }
                 }
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneChange : MonoBehaviour
+public class SceneTransition : MonoBehaviour
 {
     void Update()
     {
@@ -22,14 +22,6 @@ public class SceneChange : MonoBehaviour
             {
                 SceneManager.LoadScene("InGame");
             }
-        }
-
-        if (SceneManager.GetActiveScene().name == "InGame")
-        {
-            //if (Input.GetMouseButtonDown(0))
-            //{
-            //    SceneManager.LoadScene("Ending");
-            //}
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LHS_OnRotatePlatform : MonoBehaviour
+public class OnRotatePlatform : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
@@ -12,8 +12,8 @@ public class LHS_OnRotatePlatform : MonoBehaviour
             this.transform.parent = collision.transform;
 
         }
-
     }
+    
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Platform"))

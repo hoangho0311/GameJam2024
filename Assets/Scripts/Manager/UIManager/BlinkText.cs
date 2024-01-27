@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class BlinkText : MonoBehaviour
 {
@@ -25,5 +22,4 @@ public class BlinkText : MonoBehaviour
             count++;
         }
     }
-    // Update is called once per frame
 }

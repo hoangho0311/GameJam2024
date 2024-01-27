@@ -10,19 +10,8 @@ public class LoadingCount : MonoBehaviour
     public float increasingNum;
     public GameObject pressText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // pressText.SetActive(false);
-    }
-
     void Update()
     {
-        /*if(increasingNum <= fullmember)
-        {
-
-            countText.text = increasingNum + " / " + fullmember;
-        }*/
         if (increasingNum <= fullmember)
         {
             increasingNum += Time.deltaTime;
@@ -30,7 +19,6 @@ public class LoadingCount : MonoBehaviour
             if (increasingNum >= fullmember)
             {
                 pressText.SetActive(true);
-
                 StartCoroutine("ShowReady");
             }
         }
