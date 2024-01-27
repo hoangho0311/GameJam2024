@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PressAnyKey : MonoBehaviour
 {
     public GameObject pressText;
     float currentTime = 0;
     float waitingtime = 11f;
+    
     void Awake()
     {
         pressText.SetActive(false);
@@ -17,16 +16,7 @@ public class PressAnyKey : MonoBehaviour
         }
 
     }
-
-    void Start()
-    {
-        /*currentTime += Time.deltaTime;
-        if (currentTime > waitingtime)
-        {
-            pressText.SetActive(true);
-            //StartCoroutine(ShowReady());
-        }*/
-    }
+    
     IEnumerator ShowReady()
     {
         int count = 0;

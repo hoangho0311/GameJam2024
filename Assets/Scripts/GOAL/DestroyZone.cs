@@ -7,20 +7,11 @@ public class DestroyZone : MonoBehaviour
     public ParticleSystem bounce;
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.other.gameObject);
-
+        if (TryGetComponent<AI_Animation>(out var AIPlayer))
+        {
+            AIPlayer.AI_Anim.SetTrigger("Finish");
+        }
         bounce.Play();
         bounce.transform.position = transform.position;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
