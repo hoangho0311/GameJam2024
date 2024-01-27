@@ -7,6 +7,10 @@ public class DestinationCount : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        UIManager.Instance.CurrentRank++;
+        if (!GameManager.instance.GetGameOver())
+        {
+            UIManager.Instance._currentRank++;
+            GameManager.instance.SetWinGame(true);
+        }
     }
 }
