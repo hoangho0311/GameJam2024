@@ -95,9 +95,6 @@ public class playerController : MonoBehaviour
         camForward = camera.transform.forward;
         camRight = camera.transform.right;
 
-        Debug.Log("Righ: " + camera.transform.right);
-        Debug.Log("forward: " + camera.transform.forward);
-
         camForward.y = 0;
         camRight.y = 0;
 
@@ -110,11 +107,11 @@ public class playerController : MonoBehaviour
         camera.cullingMask = 0;
         if (name.Equals("Player"))
         {
-            cdUI.showEliminadoJ1();
+            //cdUI.showEliminadoJ1();
         }
         else
         {
-            cdUI.showEliminadoJ2();
+            //cdUI.showEliminadoJ2();
         }
         gameObject.SetActive(false);
     }

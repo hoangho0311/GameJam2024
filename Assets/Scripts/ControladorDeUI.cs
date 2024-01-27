@@ -11,9 +11,6 @@ public class ControladorDeUI : MonoBehaviour
     public GameObject gTime;
     public GameObject gTimer;
 
-    public GameObject gEliminadoJ1;
-    public GameObject gEliminadoJ2;
-
     public Text tEliminados;
     public string sFormat = "{0}/{1}";
 
@@ -89,13 +86,5 @@ public class ControladorDeUI : MonoBehaviour
         gTimer.SetActive(false);
     }
 
-    public void showEliminadoJ1()
-    {
-        gEliminadoJ1.SetActive(true);
-    }
 
-    public void showEliminadoJ2()
-    {
-        gEliminadoJ2.SetActive(true);
-    }
 }
