@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: afcbea7d83a17444f917efe855ef5095
   - enabled: 1
-    path: Assets/Scenes/InGame.unity
-    guid: 86ce14d6676e0574089ffad8ac5292cf
+    path: Assets/Scenes/InGame2.unity
+    guid: 8d99041e29a0ae1479f6ef6e9e16274f
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: cfa4f9dc78d312c43b9971b94595acbc

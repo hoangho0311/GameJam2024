@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/NavMesh-Level.asset.meta
+guid: a9b2c846db00fe843b4454fe4a35f2be
+========
+guid: 5df8552c7c2623842bf961862d47bbf6
+>>>>>>>> origin/phunguyen:Assets/Resources/DOTweenSettings.asset.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
