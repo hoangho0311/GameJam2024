@@ -24,7 +24,10 @@ public class DestinationCount : MonoBehaviour
             }
             else
             {
-                GameManager.instance.SetWinGame(true);
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    GameManager.instance.SetWinGame(true);
+                }
             }
         }
     }
