@@ -36,7 +36,7 @@ public class SceneTransition : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene("InGame");
+                SceneManager.LoadScene("InGame2");
             }
         }
 
