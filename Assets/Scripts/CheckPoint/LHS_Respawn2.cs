@@ -27,6 +27,10 @@ public class LHS_Respawn2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!anim)
+        {
+            anim = player.GetComponentInChildren<Animator>();
+        }
         /*
         if (player.transform.position.y < -spawnValue)
         {
