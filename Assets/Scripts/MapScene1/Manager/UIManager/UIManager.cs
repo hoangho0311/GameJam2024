@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    float waitTime = 2f;
+    float waitTime = 3f;
     float currentTime = 0;
     void Update()
     {
@@ -119,13 +119,12 @@ public class UIManager : MonoBehaviour
         {
             if (currentTime > waitTime)
             {
+                roundOver.SetActive(false);
                 if (gameManager.GetWinGame())
                 {
-                    if (currentTime > 3f)
+                    success.SetActive(true);
+                    if (currentTime > 5f)
                     {
-                        roundOver.SetActive(false);
-                        success.SetActive(true);
-
                         LHS_Particle.Instance.Success();
 
                         LHS_Particle.Instance.transform.position = player.transform.position + new Vector3(0, 4f, 0);
@@ -134,11 +133,10 @@ public class UIManager : MonoBehaviour
                 }
                 else
                 {
-                    if (currentTime > 3f)
+                    gameManager.SetGameOver(true);
+                    failure.SetActive(true);
+                    if (currentTime > 5f)
                     {
-                        gameManager.SetGameOver(true);
-                        roundOver.SetActive(false);
-                        failure.SetActive(true);
                         loadingPanel.SetActive(true);
                     }
                 }
