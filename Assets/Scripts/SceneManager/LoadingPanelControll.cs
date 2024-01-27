@@ -26,7 +26,7 @@ public class LoadingPanelControll : MonoBehaviour
             }
             else if(currentLevel == 3)
             {
-                sceneTransition.LoadingScene(2, 4);
+                sceneTransition.LoadingScene(3, 4);
             }
             else if (currentLevel == 4)
             {
