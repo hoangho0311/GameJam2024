@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MainPlayer : MonoBehaviour
 {
     public float speed = 10;
     public float rotateSpeed = 5;
-    public float jumpPower = 5;
+    public float jumpPower;
 
     private Camera currentCamera;
     public bool UseCameraRotation = true;
@@ -49,10 +47,14 @@ public class MainPlayer : MonoBehaviour
         currentCamera = FindObjectOfType<Camera>();
     }
 
+    private void Update()
+    {
+       GetInput();
+    }
+
     private void FixedUpdate()
     {
         FreezeRotation();
-        GetInput();
         Move();
         Turn();
         Jump();
@@ -69,7 +71,7 @@ public class MainPlayer : MonoBehaviour
     {
         hAxis = Input.GetAxis("Horizontal");
         vAxis = Input.GetAxis("Vertical");
-        jDown = Input.GetButton("Jump");
+        jDown = Input.GetButtonDown("Jump");
     }
 
     void Move()
@@ -99,7 +101,7 @@ public class MainPlayer : MonoBehaviour
     {
         if (jDown && !isJump)
         {
-            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            rigid.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime, ForceMode.Impulse);
             isJump = true;
 
             //anim.SetBool("isJump", true);
@@ -122,10 +124,7 @@ public class MainPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-           // anim.SetBool("isGround", false);
-           //isGround = false;
             anim.SetBool("isJump", false);
-            
             isJump = false;
         }
 

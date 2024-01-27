@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2710405969038700364}
   - component: {fileID: 796359721105767445}
   - component: {fileID: 623949084521294222}
-  - component: {fileID: 6247730916749444547}
+  - component: {fileID: 3610756946416072125}
   m_Layer: 0
   m_Name: Platform Circle Rotated_6
   m_TagString: Untagged
@@ -107,7 +107,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3237064147268127946, guid: e5909e6c07df7474dbbae1a47853e8bb, type: 3}
---- !u!114 &6247730916749444547
+--- !u!114 &3610756946416072125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

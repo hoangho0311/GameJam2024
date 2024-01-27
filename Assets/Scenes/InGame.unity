@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.1
   m_MinRegionArea: 100
   m_NavMeshData: {fileID: 23800000, guid: b1b441900c3c2274e9e2c33d4529456f, type: 2}
   m_BuildHeightMesh: 1
@@ -2114,7 +2114,7 @@ Transform:
   m_GameObject: {fileID: 74409497}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3632,7 +3632,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3986,7 +3986,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5882,7 +5882,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -6162,7 +6162,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -7915,7 +7915,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -10618,7 +10618,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -20992,7 +20992,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -22197,7 +22197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 866063937302052234, guid: f08c77d2cf5e41d41b5ac5c6b44bf220, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.8
+      value: 27.6
       objectReference: {fileID: 0}
     - target: {fileID: 866063937302052234, guid: f08c77d2cf5e41d41b5ac5c6b44bf220, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28600,6 +28600,7 @@ GameObject:
   - component: {fileID: 607883821}
   - component: {fileID: 607883823}
   - component: {fileID: 607883822}
+  - component: {fileID: 607883824}
   m_Layer: 0
   m_Name: Mooved Pillar (14)
   m_TagString: Wall
@@ -28616,7 +28617,7 @@ Transform:
   m_GameObject: {fileID: 607883820}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 12.160001, y: 26.76, z: 236.05997}
+  m_LocalPosition: {x: 12.160001, y: 26.47, z: 236.05997}
   m_LocalScale: {x: 1.0523884, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28682,6 +28683,25 @@ MonoBehaviour:
   fenceLength: 10
   fencePillarsFrequency: 2
   myPs: {fileID: 525793903}
+--- !u!114 &607883824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607883820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &610540220
 GameObject:
   m_ObjectHideFlags: 0
@@ -34013,7 +34033,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -35793,6 +35813,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 841581830}
     m_Modifications:
+    - target: {fileID: 3610756946416072125, guid: 84207c781cc70b448afe780791a52b74, type: 3}
+      propertyPath: m_IgnoreFromBuild
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3640444124841339801, guid: 84207c781cc70b448afe780791a52b74, type: 3}
       propertyPath: m_Name
       value: Platform Circle Rotated_6
@@ -35853,7 +35877,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6247730916749444547, guid: 84207c781cc70b448afe780791a52b74, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -39683,7 +39708,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -42150,7 +42175,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -45087,7 +45112,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -45667,7 +45692,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -47298,7 +47323,7 @@ Transform:
   m_GameObject: {fileID: 1188860807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.75, z: -2.3}
+  m_LocalPosition: {x: 0, y: 5.31, z: -2.3}
   m_LocalScale: {x: 0.54809, y: 1, z: 0.74573}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48826,7 +48851,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -56479,6 +56504,7 @@ GameObject:
   - component: {fileID: 1315067974}
   - component: {fileID: 1315067976}
   - component: {fileID: 1315067975}
+  - component: {fileID: 1315067977}
   m_Layer: 0
   m_Name: Mooved Pillar (13)
   m_TagString: Wall
@@ -56495,7 +56521,7 @@ Transform:
   m_GameObject: {fileID: 1315067973}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -9.5, y: 26.9, z: 236.06}
+  m_LocalPosition: {x: -8.25, y: 26.5, z: 236.06}
   m_LocalScale: {x: 1.0523884, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56561,6 +56587,25 @@ MonoBehaviour:
   fenceLength: 10
   fencePillarsFrequency: 2
   myPs: {fileID: 1905139392}
+--- !u!114 &1315067977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315067973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1318550574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59892,7 +59937,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -60418,6 +60463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4597081199573503089, guid: ce12be02677fcae4782ff9b4a2d4280b, type: 3}
+      propertyPath: m_Center.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8444045723704594444, guid: ce12be02677fcae4782ff9b4a2d4280b, type: 3}
       propertyPath: m_Name
       value: Square_7
@@ -60788,16 +60837,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6247730916749444547, guid: 84207c781cc70b448afe780791a52b74, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3640444124841339801, guid: 84207c781cc70b448afe780791a52b74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1457595142}
-    - targetCorrespondingSourceObject: {fileID: 3640444124841339801, guid: 84207c781cc70b448afe780791a52b74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1457595146}
   m_SourcePrefab: {fileID: 100100000, guid: 84207c781cc70b448afe780791a52b74, type: 3}
 --- !u!4 &1457595138 stripped
 Transform:
@@ -60817,25 +60864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatingSpeed: 50
---- !u!114 &1457595146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49068928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
-  m_OverrideGenerateLinks: 0
-  m_GenerateLinks: 0
-  m_IgnoreFromBuild: 1
-  m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
 --- !u!1 &1460034665
 GameObject:
   m_ObjectHideFlags: 0
@@ -61792,7 +61820,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -62542,7 +62570,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -63284,7 +63312,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -69985,7 +70013,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -74940,6 +74968,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6547090958420059894, guid: d1e34f7f12ba09a4aa5429f701368cef, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547090958420059894, guid: d1e34f7f12ba09a4aa5429f701368cef, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7824210992127600641, guid: d1e34f7f12ba09a4aa5429f701368cef, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -75531,6 +75567,7 @@ GameObject:
   - component: {fileID: 1857379184}
   - component: {fileID: 1857379186}
   - component: {fileID: 1857379185}
+  - component: {fileID: 1857379187}
   m_Layer: 0
   m_Name: Mooved Pillar (16)
   m_TagString: Wall
@@ -75613,6 +75650,25 @@ MonoBehaviour:
   fenceLength: 10
   fencePillarsFrequency: 2
   myPs: {fileID: 1240781430}
+--- !u!114 &1857379187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857379183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!4 &1859521819 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6cffb07089e46994f930ef62cacd0422, type: 3}
@@ -84593,6 +84649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 72687482}
     m_Modifications:
+    - target: {fileID: 391723320054889443, guid: 0381eef03f9a2fc4eb52da0b5cd48bee, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1125059761289514531, guid: 0381eef03f9a2fc4eb52da0b5cd48bee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -85732,6 +85792,7 @@ GameObject:
   - component: {fileID: 2031863060}
   - component: {fileID: 2031863062}
   - component: {fileID: 2031863061}
+  - component: {fileID: 2031863063}
   m_Layer: 0
   m_Name: Mooved Pillar (15)
   m_TagString: Wall
@@ -85814,6 +85875,25 @@ MonoBehaviour:
   fenceLength: 10
   fencePillarsFrequency: 2
   myPs: {fileID: 634975949}
+--- !u!114 &2031863063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031863059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2034385157
 GameObject:
   m_ObjectHideFlags: 0
@@ -87563,6 +87643,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 72687482}
     m_Modifications:
+    - target: {fileID: 3727793076479180446, guid: 31df77426f81763479f07d94cf423d48, type: 3}
+      propertyPath: m_Center.y
+      value: -2.18
+      objectReference: {fileID: 0}
     - target: {fileID: 6841052149381098549, guid: 31df77426f81763479f07d94cf423d48, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -87683,7 +87767,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 10
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -88318,6 +88402,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3640444124841339801, guid: 84207c781cc70b448afe780791a52b74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2083938146}
+    - targetCorrespondingSourceObject: {fileID: 3640444124841339801, guid: 84207c781cc70b448afe780791a52b74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2083938150}
   m_SourcePrefab: {fileID: 100100000, guid: 84207c781cc70b448afe780791a52b74, type: 3}
 --- !u!4 &2083938142 stripped
 Transform:
@@ -88337,6 +88424,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatingSpeed: 50
+--- !u!114 &2083938150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023068184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2086588324
 GameObject:
   m_ObjectHideFlags: 0
@@ -95845,7 +95951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotateSpeed: 5
-  jumpPower: 6
+  jumpPower: 400
   UseCameraRotation: 1
   dust: {fileID: 1610561957}
   bar: {fileID: 1572515511}
