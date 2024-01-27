@@ -10,6 +10,7 @@ public class SceneTransition : MonoBehaviour
     public static SceneTransition instance;
     public GameObject LoadingScreen, startTransition, endTransition;
     public CountdownController countdownController;
+    public CountdownControllerMap3 countdownControllerMap3;
     public Slider loadingBarFill;
     private float target;
 
@@ -20,7 +21,11 @@ public class SceneTransition : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(StartTransition());
+        if(SceneManager.GetActiveScene().name != "Ending")
+        {
+            StartCoroutine(StartTransition());
+
+        }
     }
 
     void Update()
@@ -73,7 +78,9 @@ public class SceneTransition : MonoBehaviour
     {
         startTransition.SetActive(true);
         yield return new WaitForSeconds(0.6f);
-        countdownController.StartCountDown();
+        if (countdownController != null)
+            countdownController.StartCountDown();
+        else countdownControllerMap3.StartCountDown();
         Time.timeScale = 0;
         startTransition.SetActive(false);
     }

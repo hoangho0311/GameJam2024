@@ -2,6 +2,7 @@ using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadingPanelControll : MonoBehaviour
 {
@@ -18,20 +19,19 @@ public class LoadingPanelControll : MonoBehaviour
         {
             if(currentLevel == 1)
             {
-                sceneTransition.LoadingScene(1, 2);
+                sceneTransition.LoadingScene(2, 2);
             }
             else if(currentLevel == 2)
             {
-                sceneTransition.LoadingScene(2, 3);
+                sceneTransition.LoadingScene(3, 3);
             }
             else if(currentLevel == 3)
             {
-                sceneTransition.LoadingScene(3, 4);
+                sceneTransition.LoadingScene(4, 1);
             }
-            else if (currentLevel == 4)
+            else if (SceneManager.GetActiveScene().name == "Ending")
             {
-                //Ending Scene
-                sceneTransition.LoadingScene(3, 1);
+                sceneTransition.LoadingScene(0, 1);
             }
         }
         else if(gameManager.GetGameOver())

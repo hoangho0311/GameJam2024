@@ -1,18 +1,17 @@
+using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ClickEnding : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject loadingPanelControll;
+    private void Start()
     {
-        
+        GameManager.instance.SetWinGame(true);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ClickCC()
     {
-        
+        loadingPanelControll.SetActive(true);
     }
 }
