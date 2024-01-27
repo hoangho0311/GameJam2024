@@ -22,15 +22,15 @@ public class LHS_Camera : MonoBehaviour
     }
     void CameraRotate()
     {
-        // ¸¶¿ì½º ÁÂ¿ì ÀÌµ¿ ´©Àû
+        // Â¸Â¶Â¿Ã¬Â½Âº ÃÃ‚Â¿Ã¬ Ã€ÃŒÂµÂ¿ Â´Â©Ã€Ã»
         x += Input.GetAxis("Mouse X");
-        // ¸¶¿ì½º »óÇÏ ÀÌµ¿ ´©Àû
+        // Â¸Â¶Â¿Ã¬Â½Âº Â»Ã³Ã‡Ã Ã€ÃŒÂµÂ¿ Â´Â©Ã€Ã»
         y -= Input.GetAxis("Mouse Y");
-        // ÀÌµ¿·®¿¡ µû¶ó Ä«¸Ş¶ó°¡ ¹Ù¶óº¸´Â ¹æÇâ Á¶Á¤
+        // Ã€ÃŒÂµÂ¿Â·Â®Â¿Â¡ ÂµÃ»Â¶Ã³ Ã„Â«Â¸ÃÂ¶Ã³Â°Â¡ Â¹Ã™Â¶Ã³ÂºÂ¸Â´Ã‚ Â¹Ã¦Ã‡Ã¢ ÃÂ¶ÃÂ¤
         transform.rotation = Quaternion.Euler(y, x, 0);
-        // µ¹¾Æ°¥ ¼ö ÀÖ´Â °¢µµ Á¦ÇÑ
+        // ÂµÂ¹Â¾Ã†Â°Â¥ Â¼Ã¶ Ã€Ã–Â´Ã‚ Â°Â¢ÂµÂµ ÃÂ¦Ã‡Ã‘
         y = Mathf.Clamp(y, -10, 30);
-        // Ä«¸Ş¶ó¿Í ÇÃ·¹ÀÌ¾îÀÇ °Å¸®Á¶Á¤
+        // Ã„Â«Â¸ÃÂ¶Ã³Â¿Ã Ã‡ÃƒÂ·Â¹Ã€ÃŒÂ¾Ã®Ã€Ã‡ Â°Ã…Â¸Â®ÃÂ¶ÃÂ¤
         Vector3 reDistance = new Vector3(0f, -1.8f, distance);
         transform.position = player.transform.position - transform.rotation * reDistance;
     }
