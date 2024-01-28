@@ -20,7 +20,7 @@ public class CheckPlayerMap3 : MonoBehaviour
 
     private void Update()
     {
-        if (UIManager.Instance.limitTime <= 5)
+        if (UIManager.Instance.limitTime < 0 && !GameManager.instance.GetGameOver())
         {
             GameManager.instance.SetWinGame(true);
         }
@@ -49,7 +49,8 @@ public class CheckPlayerMap3 : MonoBehaviour
         {
             anim.SetBool("isFalling", false);
             UIManager.Instance.limitTime = 0;
-            GameManager.instance.SetGameOver(true);
+            if(!GameManager.instance.GetWinGame())
+                GameManager.instance.SetGameOver(true);
         }
     }
 }

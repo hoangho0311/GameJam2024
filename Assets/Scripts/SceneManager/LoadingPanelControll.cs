@@ -15,6 +15,10 @@ public class LoadingPanelControll : MonoBehaviour
         currentLevel = PlayerPrefs.GetInt("CurrentLevelRank");
         gameManager = GameManager.instance;
         sceneTransition = SceneTransition.instance;
+        if(SceneManager.GetActiveScene().name == "Lobby")
+        {
+            sceneTransition.LoadingScene(1, 1);
+        }
         if (gameManager.GetWinGame())
         {
             if(currentLevel == 1)
