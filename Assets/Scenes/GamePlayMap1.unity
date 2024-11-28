@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66621685, g: 0.8827709, b: 0.8857476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14671,17 +14670,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_PrefabInstance: {fileID: 1357249414}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1357249416 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-  m_PrefabInstance: {fileID: 1357249414}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1358080943
 GameObject:
   m_ObjectHideFlags: 0
@@ -34634,7 +34622,6 @@ MonoBehaviour:
   mysfx: {fileID: 6858984339316697392}
   jumpfx: {fileID: 8300000, guid: 74364cdbd5f339d4ba75e5e56a86c13e, type: 3}
   bouncefx: {fileID: 8300000, guid: ff9c94703b7a32443b1f0bb27870900b, type: 3}
-  joystick: {fileID: 1357249416}
 --- !u!1001 &6865373469018810773
 PrefabInstance:
   m_ObjectHideFlags: 0

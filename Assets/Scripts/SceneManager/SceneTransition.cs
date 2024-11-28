@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -24,7 +23,6 @@ public class SceneTransition : MonoBehaviour
         if(SceneManager.GetActiveScene().name != "Ending")
         {
             StartCoroutine(StartTransition());
-
         }
     }
 
@@ -77,11 +75,18 @@ public class SceneTransition : MonoBehaviour
     IEnumerator StartTransition()
     {
         startTransition.SetActive(true);
+        
         yield return new WaitForSeconds(0.6f);
+
         if (countdownController != null)
+        {
             countdownController.StartCountDown();
-        else countdownControllerMap3.StartCountDown();
-        Time.timeScale = 0;
+        }
+        else if (countdownControllerMap3)
+        {
+            countdownControllerMap3.StartCountDown();
+        }
+        
         startTransition.SetActive(false);
     }
 

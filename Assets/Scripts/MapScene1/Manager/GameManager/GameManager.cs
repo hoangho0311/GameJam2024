@@ -60,9 +60,4 @@ public class GameManager : MonoBehaviour
         isWinGame = false;
         instance = this;
     }
-
-    //private void OnDestroy()
-    //{
-    //    PlayerPrefs.SetInt("CurrentLevelRank", 1);
-    //}
 }

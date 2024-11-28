@@ -9,12 +9,14 @@ public class LoadingPanelControll : MonoBehaviour
     private SceneTransition sceneTransition;
     private GameManager gameManager;
     private int currentLevel;
+    
     // Start is called before the first frame update
     void Start()
     {
         currentLevel = PlayerPrefs.GetInt("CurrentLevelRank");
         gameManager = GameManager.instance;
         sceneTransition = SceneTransition.instance;
+        
         if(SceneManager.GetActiveScene().name == "Lobby")
         {
             sceneTransition.LoadingScene(1, 1);

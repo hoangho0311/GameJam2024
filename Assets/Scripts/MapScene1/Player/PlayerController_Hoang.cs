@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController_Hoang : MonoBehaviour
 {
@@ -33,7 +30,6 @@ public class PlayerController_Hoang : MonoBehaviour
     Vector3 moveVec;
 
     //Joystick
-    [SerializeField] private FixedJoystick joystick;
 
     // Start is called before the first frame update
     void Awake()
@@ -71,7 +67,7 @@ public class PlayerController_Hoang : MonoBehaviour
 
     void Move()
     {
-        moveVec = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
+        //moveVec = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
 
         if (UseCameraRotation)
         {
@@ -86,7 +82,7 @@ public class PlayerController_Hoang : MonoBehaviour
 
     void Turn()
     {
-        if (joystick.Horizontal == 0 && joystick.Vertical == 0)
+        //if (joystick.Horizontal == 0 && joystick.Vertical == 0)
             return;
         Quaternion newRotation = Quaternion.LookRotation(moveVec);
         rigid.rotation = Quaternion.Slerp(rigid.rotation, newRotation, rotateSpeed * Time.deltaTime);

@@ -4,25 +4,24 @@ using UnityEngine.UI;
 
 public class CountdownController : MonoBehaviour
 {
+    public Animator animator;
     public int countdownTime = 4;
-
     public Text countdownDisplay;
-    public GameObject anim;
 
+    [Header("Number")]
     public GameObject Num_A;   
     public GameObject Num_B;   
     public GameObject Num_C;   
     public GameObject Num_GO;
-    //public GameObject Bar;
-    Animator animator;
 
+    [Header("Audio Source")]
     public AudioSource mysfx;
     public AudioClip startsfx;
     public AudioClip gosfx;
+    
 
     private void Awake()
     {
-        animator = anim.GetComponent<Animator>();
         
         Num_A.SetActive(false); 
         Num_B.SetActive(false); 
@@ -37,10 +36,9 @@ public class CountdownController : MonoBehaviour
 
     IEnumerator CountdownToStart()
     {
-        //Bar.SetActive(true);
+        Time.timeScale = 0;
         while (countdownTime > 0)
         {
-            //Bar.SetActive(true);
             ChangeImage();
             countdownDisplay.text = countdownTime.ToString();
             yield return new WaitForSecondsRealtime(1f);

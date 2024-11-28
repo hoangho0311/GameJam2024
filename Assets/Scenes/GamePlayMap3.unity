@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66621685, g: 0.8827709, b: 0.8857476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36478,7 +36477,6 @@ MonoBehaviour:
   mysfx: {fileID: 1235142650}
   jumpfx: {fileID: 8300000, guid: 74364cdbd5f339d4ba75e5e56a86c13e, type: 3}
   bouncefx: {fileID: 8300000, guid: ff9c94703b7a32443b1f0bb27870900b, type: 3}
-  joystick: {fileID: 1261942395}
 --- !u!82 &1235142650
 AudioSource:
   m_ObjectHideFlags: 0
@@ -42030,17 +42028,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
---- !u!114 &1261942395 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-  m_PrefabInstance: {fileID: 1261942394}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1261942396 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -56959,9 +56946,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fd2d65bfb2edf468a02fb181da4458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2081404200}
   countdownTime: 5
   countdownDisplay: {fileID: 141884705}
-  anim: {fileID: 2081404198}
   Num_A: {fileID: 136606939}
   Num_B: {fileID: 981393585}
   Num_C: {fileID: 1457192187}
